@@ -7,3 +7,4 @@ C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.csp
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.LoginForm.resources

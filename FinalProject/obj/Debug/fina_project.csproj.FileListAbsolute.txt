@@ -1,0 +1,11 @@
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\bin\Debug\FinalProject.exe
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\fina_project.csprojAssemblyReference.cache
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\final_project.custom_views.Component1.resources
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\final_project.LoginForm.resources
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\fina_project.csproj.GenerateResource.cache
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\fina_project.csproj.CoreCompileInputs.cache
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
