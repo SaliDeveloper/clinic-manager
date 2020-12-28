@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    interface IDoctor : ISalaried
+    interface IDoctor
     {
+        List<DayOfWeek> WorkingDays { get; set; }
+        List<Patient> Patients { get; set; }
+        int VisitDuration { get; }
 
     }
 }

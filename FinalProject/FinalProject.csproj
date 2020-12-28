@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="interfaces\ISalaried.cs" />
+    <Compile Include="main_classes\dental_specialties\Prosthodontics.cs" />
+    <Compile Include="main_classes\dental_specialties\PediatricDentistry.cs" />
+    <Compile Include="main_classes\dental_specialties\Periodontics.cs" />
+    <Compile Include="main_classes\dental_specialties\RestorativeDentistry.cs" />
+    <Compile Include="main_classes\dental_specialties\Endodontics.cs" />
+    <Compile Include="main_classes\dental_specialties\Orthodontics.cs" />
     <Compile Include="main_classes\Dentist.cs" />
     <Compile Include="main_classes\BankAccount.cs" />
     <Compile Include="main_classes\Human.cs" />
