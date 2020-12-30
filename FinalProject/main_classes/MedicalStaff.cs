@@ -2,18 +2,18 @@
 
 namespace FinalProject
 {
-    class MedicalStaff : ISalaried
+    class MedicalStaff : IPerson, ISalaried
     {
         int salary;
         double tax;
 
-        public MedicalStaff(IProfile person, IBankAccount bankAccount)
+        public MedicalStaff(IProfile profile, IBankAccount bankAccount)
         {
             BankAccount = bankAccount;
-            Person = person;
+            Profile = profile;
         }
 
-        public IProfile Person { get; set; }
+        public IProfile Profile { get; set; }
         public IBankAccount BankAccount { get; set; }
         public int Salary
         {

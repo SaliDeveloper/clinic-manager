@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Patient
+    class Patient : IPerson
     {
-        public Patient(IProfile person, Insurance insurance = null)
+        public Patient(IProfile profile, Insurance insurance = null)
         {
-            Person = person;
+            Profile = profile;
             Insurance = insurance;
         }
 
-        public IProfile Person { get; set; }
+        public IProfile Profile { get; set; }
         internal Insurance Insurance { get; set; }
     }
 }
