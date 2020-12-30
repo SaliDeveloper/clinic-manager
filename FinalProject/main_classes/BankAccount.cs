@@ -3,7 +3,15 @@ using System.Diagnostics;
 
 namespace FinalProject
 {
-    class BankAccount
+    public interface IBankAccount
+    {
+        string AccountNumber { get; set; }
+        int Balance { get; }
+        int ReduceBalance(int value);
+        int IncreaseBalance(int value);
+    }
+
+    class BankAccount : IBankAccount
     {
         private int balance;
 
@@ -58,5 +66,4 @@ namespace FinalProject
             return Balance;
         }
     }
-
 }

@@ -8,9 +8,8 @@ namespace FinalProject
     {
         int visitDuration;
 
-        public Dentist(string name, string lastName, string nationalCode, string accountNumber
-            , int visitDuration, List<DayOfWeek> workingDays)
-            : base(name, lastName, nationalCode, accountNumber)
+        public Dentist(IProfile person, IBankAccount bankAccount, int visitDuration, List<DayOfWeek> workingDays)
+            : base(person, bankAccount)
         {
             VisitDuration = visitDuration;
             WorkingDays = workingDays;

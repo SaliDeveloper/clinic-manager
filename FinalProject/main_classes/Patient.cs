@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Patient : Human
+    class Patient
     {
-        private Insurance insurance;
-
-        public Patient(string name, string lastName, string nationalCode)
-            : base(name, lastName, nationalCode)
+        public Patient(IProfile person, Insurance insurance = null)
         {
+            Person = person;
+            Insurance = insurance;
         }
+
+        public IProfile Person { get; set; }
+        internal Insurance Insurance { get; set; }
     }
 }

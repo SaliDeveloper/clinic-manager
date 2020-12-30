@@ -55,7 +55,7 @@
     <Compile Include="main_classes\dental_specialties\Orthodontics.cs" />
     <Compile Include="main_classes\Dentist.cs" />
     <Compile Include="main_classes\BankAccount.cs" />
-    <Compile Include="main_classes\Human.cs" />
+    <Compile Include="main_classes\Profile.cs" />
     <Compile Include="interfaces\IDoctor.cs" />
     <Compile Include="main_classes\Insurance.cs" />
     <Compile Include="main_classes\MedicalStaff.cs" />

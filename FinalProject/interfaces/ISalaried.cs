@@ -8,8 +8,6 @@ namespace FinalProject
 {
     interface ISalaried
     {
-        BankAccount Account { get; set; }
-
         int Salary { get; set; }
 
         //Tax rate

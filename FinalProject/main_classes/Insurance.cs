@@ -9,7 +9,6 @@ namespace FinalProject
     class Insurance
     {
         private string organization;
-        private Human human;
         private DateTime expirationDate;
     }
 }

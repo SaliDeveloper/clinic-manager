@@ -2,18 +2,19 @@
 
 namespace FinalProject
 {
-    class MedicalStaff : Human, ISalaried
+    class MedicalStaff : ISalaried
     {
         int salary;
         double tax;
 
-        public MedicalStaff(string name, string lastName, string nationalCode, string accountNumber)
-            : base(name, lastName, nationalCode)
+        public MedicalStaff(IProfile person, IBankAccount bankAccount)
         {
-            Account = new BankAccount(accountNumber);
+            BankAccount = bankAccount;
+            Person = person;
         }
 
-        public BankAccount Account { get; set; }
+        public IProfile Person { get; set; }
+        public IBankAccount BankAccount { get; set; }
         public int Salary
         {
             get => salary;
@@ -37,7 +38,7 @@ namespace FinalProject
         public void GetSalary()
         {
             double realSalary = (1.0 - tax) * Salary + Wage;
-            Account.IncreaseBalance((int)realSalary);
+            BankAccount.IncreaseBalance((int)realSalary);
         }
     }
 }

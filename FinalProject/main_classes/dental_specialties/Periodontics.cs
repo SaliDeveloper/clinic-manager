@@ -8,9 +8,8 @@ namespace FinalProject
 {
     class Periodontics : Dentist
     {
-        public Periodontics(string name, string lastName, string nationalCode,
-            string accountNumber, int visitDuration, List<DayOfWeek> workingDays)
-            : base(name, lastName, nationalCode, accountNumber, visitDuration, workingDays)
+        public Periodontics(IProfile person, IBankAccount bankAccount, int visitDuration,
+            List<DayOfWeek> workingDays) : base(person, bankAccount, visitDuration, workingDays)
         {
         }
     }
