@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics;
+using FinalProject.Interfaces;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes
 {
-    class MedicalStaff : IPerson, ISalaried
+    public class MedicalStaff : IPerson, ISalaried
     {
-        int salary;
-        double tax;
+        private int _salary;
+        private double _tax;
 
         public MedicalStaff(IProfile profile, IBankAccount bankAccount)
         {
@@ -17,27 +18,27 @@ namespace FinalProject
         public IBankAccount BankAccount { get; set; }
         public int Salary
         {
-            get => salary;
+            get => _salary;
             set
             {
                 Debug.Assert(value >= 0);
-                salary = value;
+                _salary = value;
             }
         }
         public double Tax
         {
-            get => tax;
+            get => _tax;
             set
             {
                 Debug.Assert(value >= 0.0 && value <= 1.0);
-                tax = value;
+                _tax = value;
             }
         }
         protected int Wage { get; set; }
 
         public void GetSalary()
         {
-            double realSalary = (1.0 - tax) * Salary + Wage;
+            double realSalary = (1.0 - _tax) * Salary + Wage;
             BankAccount.IncreaseBalance((int)realSalary);
         }
     }

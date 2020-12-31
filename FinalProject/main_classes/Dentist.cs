@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using FinalProject.Interfaces;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes
 {
-    abstract class Dentist : MedicalStaff, IDoctor
+    public class Dentist : MedicalStaff, IDoctor
     {
-        int visitDuration;
+        private int _visitDuration;
 
         public Dentist(IProfile person, IBankAccount bankAccount, int visitDuration, List<DayOfWeek> workingDays)
             : base(person, bankAccount)
@@ -16,14 +17,14 @@ namespace FinalProject
         }
 
         public List<DayOfWeek> WorkingDays { get; set; }
-        public List<Patient> Patients { get; set; }
+        public List<Appointment> Appointments { get; set; }
         public int VisitDuration
         {
-            get => visitDuration;
+            get => _visitDuration;
             protected set
             {
                 Debug.Assert(value > 0);
-                visitDuration = value;
+                _visitDuration = value;
             }
         }
     }

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes.Dental_Specialties
 {
     class Endodontics : Dentist
     {

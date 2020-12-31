@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes
 {
-    public enum Gender { MAN, WOMAN };
+    public enum Gender { Man, Woman };
 
     public interface IProfile
     {
@@ -16,9 +16,9 @@ namespace FinalProject
         Gender Gender { get; set; }
     }
 
-    class Profile : IProfile
+    public class Profile : IProfile
     {
-        string phoneNum, nationalCode, password;
+        private string _phoneNum, _nationalCode, _password;
         public Profile(string firstName, string lastName, string nationalCode)
         {
             FirstName = firstName;
@@ -27,7 +27,7 @@ namespace FinalProject
         }
 
         public Profile(string firstName, string lastName, string nationalCode,string userName,
-            string password, Gender gender = Gender.MAN): this(firstName, lastName, nationalCode)
+            string password, Gender gender = Gender.Man): this(firstName, lastName, nationalCode)
         {
             UserName = userName;
             Password = password;
@@ -37,30 +37,30 @@ namespace FinalProject
         public string UserName { get; set; }
         public string Password
         {
-            get => password;
+            get => _password;
             set
             {
                 if (value.Length < 4)
                     throw new Exception("Password length can't be less than 4 chars");
-                password = value;
+                _password = value;
             }
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string NationalCode
         {
-            get => nationalCode;
+            get => _nationalCode;
             set
             {
                 Debug.Assert(value.Length == 10);
                 //to ensure that the string is of numeric type
                 Debug.Assert(int.TryParse(value, out _));
-                nationalCode = value;
+                _nationalCode = value;
             }
         }
         public string PhoneNumber
         {
-            get => phoneNum;
+            get => _phoneNum;
             set
             {
                 if (value[0] == '0')
@@ -70,7 +70,7 @@ namespace FinalProject
                 //to ensure that the string is of numeric type
                 Debug.Assert(int.TryParse(value, out _));
 
-                phoneNum = value;
+                _phoneNum = value;
             }
         }
         public Gender Gender { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes
 {
     public interface IBankAccount
     {
@@ -11,9 +11,9 @@ namespace FinalProject
         int IncreaseBalance(int value);
     }
 
-    class BankAccount : IBankAccount
+    public class BankAccount : IBankAccount
     {
-        private int balance;
+        private int _balance;
 
         public BankAccount(string accountNumber, int balance = 0)
         {
@@ -25,12 +25,12 @@ namespace FinalProject
 
         public int Balance
         {
-            get => balance;
+            get => _balance;
             private set
             {
                 if (value < 0)
                     throw new ArithmeticException();
-                balance = value;
+                _balance = value;
             }
         }
         /**

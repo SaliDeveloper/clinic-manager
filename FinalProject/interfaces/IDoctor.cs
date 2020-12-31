@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FinalProject.Main_Classes;
 
-namespace FinalProject
+namespace FinalProject.Interfaces
 {
-    interface IDoctor
+    public interface IDoctor
     {
         List<DayOfWeek> WorkingDays { get; set; }
-        List<Patient> Patients { get; set; }
+        List<Appointment> Appointments { get; set; }
         int VisitDuration { get; }
 
     }

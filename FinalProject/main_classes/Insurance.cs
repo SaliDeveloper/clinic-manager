@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FinalProject
+namespace FinalProject.Main_Classes
 {
-    class Insurance
+    public class Insurance
     {
-        private string organization;
-        private DateTime expirationDate;
+        public string Organization { get; set; }
+        public DateTime ExpirationDate { get; set; }
     }
 }

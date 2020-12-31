@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FinalProject.Main_Classes;
 
-namespace FinalProject
+namespace FinalProject.Interfaces
 {
-    interface IPerson
+    public interface IPerson
     {
         IProfile Profile { get; set; }
     }
