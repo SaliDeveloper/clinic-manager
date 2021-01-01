@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class PatientForm : Form
+    public partial class LoginForm : Form
     {
-        public PatientForm()
+        public LoginForm()
         {
             InitializeComponent();
+            cmb_login_type.SelectedIndex = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form = new HomeForm();
+            form.ShowDialog();
         }
     }
 }
