@@ -53,8 +53,8 @@ namespace FinalProject.Main_Classes
             set
             {
                 Debug.Assert(value.Length == 10);
-                //to ensure that the string is of numeric type
-                Debug.Assert(int.TryParse(value, out _));
+                ////to ensure that the string is of numeric type
+                //Debug.Assert(int.TryParse(value, out _));
                 _nationalCode = value;
             }
         }
@@ -67,8 +67,8 @@ namespace FinalProject.Main_Classes
                     value = value.Substring(1);
                 Debug.Assert(value.Length == 10);   // sample --> [0]912 345 6789
 
-                //to ensure that the string is of numeric type
-                Debug.Assert(int.TryParse(value, out _));
+                ////to ensure that the string is of numeric type
+                //Debug.Assert(int.TryParse(value, out _));
 
                 _phoneNum = value;
             }

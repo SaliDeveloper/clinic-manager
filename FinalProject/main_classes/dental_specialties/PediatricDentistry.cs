@@ -9,5 +9,6 @@ namespace FinalProject.Main_Classes.Dental_Specialties
             List<DayOfWeek> workingDays) : base(person, bankAccount, visitDuration, workingDays)
         {
         }
+        public override string GetSpecialty() => "Pediatric Dentistry";
     }
 }

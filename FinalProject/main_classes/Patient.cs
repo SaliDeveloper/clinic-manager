@@ -9,17 +9,17 @@ namespace FinalProject.Main_Classes
         {
             Profile = profile;
             Insurance = insurance;
-            Appointments = new List<Appointment>();
+            //ManageAppointments = new ManageAppointments();
         }
 
         public IProfile Profile { get; set; }
-        public List<Appointment> Appointments { get; private set; }
+        public ManageAppointments ManageAppointments { get; private set; }
         internal Insurance Insurance { get; set; }
 
         public bool AddAppointment(Appointment appointment)
         {
             if (appointment.Patient != this) return false;
-            Appointments.Add(appointment);
+            ManageAppointments.AddAppointments(appointment);
             return true;
         }
 
@@ -38,5 +38,10 @@ namespace FinalProject.Main_Classes
         }
 
         public override int GetHashCode() => (Profile != null ? Profile.GetHashCode() : 0);
+
+        public override string ToString()
+        {
+            return Profile.FirstName + " " + Profile.LastName;
+        }
     }
 }

@@ -5,7 +5,7 @@ using FinalProject.Interfaces;
 
 namespace FinalProject.Main_Classes
 {
-    public class Dentist : MedicalStaff, IDoctor
+    public abstract class Dentist : MedicalStaff, IDoctor
     {
         private int _visitDuration;
 
@@ -17,7 +17,7 @@ namespace FinalProject.Main_Classes
         }
 
         public List<DayOfWeek> WorkingDays { get; set; }
-        public List<Appointment> Appointments { get; set; }
+        public ManageAppointments ManageAppointments { get; set; }
         public int VisitDuration
         {
             get => _visitDuration;
@@ -26,6 +26,11 @@ namespace FinalProject.Main_Classes
                 Debug.Assert(value > 0);
                 _visitDuration = value;
             }
+        }
+        public abstract string GetSpecialty();
+        public override string ToString()
+        {
+            return "Dr." + Profile.LastName;
         }
     }
 

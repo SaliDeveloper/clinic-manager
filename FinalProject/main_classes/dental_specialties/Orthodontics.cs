@@ -8,5 +8,7 @@ namespace FinalProject.Main_Classes.Dental_Specialties
         public Orthodontics(IProfile person, IBankAccount bankAccount, int visitDuration, List<DayOfWeek> workingDays) : base(person, bankAccount, visitDuration, workingDays)
         {
         }
+
+        public override string GetSpecialty() => "Orthodontics";
     }
 }
