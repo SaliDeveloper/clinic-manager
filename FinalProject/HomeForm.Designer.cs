@@ -1,6 +1,6 @@
 ﻿namespace FinalProject
 {
-    partial class HomeForm
+    partial class PatientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,28 +37,30 @@
             this.btn_edit_profile = new System.Windows.Forms.Button();
             this.lbl_profile = new System.Windows.Forms.Label();
             this.table_profile = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_4_0 = new System.Windows.Forms.Label();
             this.lbl_4_1 = new System.Windows.Forms.Label();
-            this.lbl_3_0 = new System.Windows.Forms.Label();
+            this.lbl_4_2 = new System.Windows.Forms.Label();
             this.lbl_3_1 = new System.Windows.Forms.Label();
+            this.lbl_3_2 = new System.Windows.Forms.Label();
+            this.lbl_2_2 = new System.Windows.Forms.Label();
             this.lbl_2_1 = new System.Windows.Forms.Label();
-            this.lbl_2_0 = new System.Windows.Forms.Label();
+            this.lbl_1_2 = new System.Windows.Forms.Label();
             this.lbl_1_1 = new System.Windows.Forms.Label();
-            this.lbl_1_0 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_add_appointment = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.table_search = new System.Windows.Forms.TableLayoutPanel();
             this.btn_search = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
+            this.table_radiobtn = new System.Windows.Forms.TableLayoutPanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Specialty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.table_radiobtn = new System.Windows.Forms.TableLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,8 +68,8 @@
             this.table_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.table_search.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.table_radiobtn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -86,10 +88,11 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_add_appointment);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_exit);
             this.splitContainer1.Panel2.Controls.Add(this.table_search);
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(982, 553);
+            this.splitContainer1.Size = new System.Drawing.Size(1082, 553);
             this.splitContainer1.SplitterDistance = 380;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -100,7 +103,7 @@
             this.btn_edit_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit_profile.ForeColor = System.Drawing.Color.Transparent;
             this.btn_edit_profile.Image = global::FinalProject.Properties.Resources.edit_icon;
-            this.btn_edit_profile.Location = new System.Drawing.Point(343, 276);
+            this.btn_edit_profile.Location = new System.Drawing.Point(333, 276);
             this.btn_edit_profile.Name = "btn_edit_profile";
             this.btn_edit_profile.Padding = new System.Windows.Forms.Padding(3);
             this.btn_edit_profile.Size = new System.Drawing.Size(34, 34);
@@ -115,7 +118,7 @@
             this.lbl_profile.Name = "lbl_profile";
             this.lbl_profile.Size = new System.Drawing.Size(304, 34);
             this.lbl_profile.TabIndex = 12;
-            this.lbl_profile.Text = "Patient Information";
+            this.lbl_profile.Text = "PatientId Information";
             this.lbl_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // table_profile
@@ -126,14 +129,14 @@
             this.table_profile.ColumnCount = 2;
             this.table_profile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.table_profile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.table_profile.Controls.Add(this.lbl_4_0, 0, 3);
             this.table_profile.Controls.Add(this.lbl_4_1, 0, 3);
-            this.table_profile.Controls.Add(this.lbl_3_0, 0, 2);
+            this.table_profile.Controls.Add(this.lbl_4_2, 0, 3);
             this.table_profile.Controls.Add(this.lbl_3_1, 0, 2);
-            this.table_profile.Controls.Add(this.lbl_2_1, 1, 1);
-            this.table_profile.Controls.Add(this.lbl_2_0, 0, 1);
-            this.table_profile.Controls.Add(this.lbl_1_1, 1, 0);
-            this.table_profile.Controls.Add(this.lbl_1_0, 0, 0);
+            this.table_profile.Controls.Add(this.lbl_3_2, 0, 2);
+            this.table_profile.Controls.Add(this.lbl_2_2, 1, 1);
+            this.table_profile.Controls.Add(this.lbl_2_1, 0, 1);
+            this.table_profile.Controls.Add(this.lbl_1_2, 1, 0);
+            this.table_profile.Controls.Add(this.lbl_1_1, 0, 0);
             this.table_profile.Location = new System.Drawing.Point(7, 316);
             this.table_profile.Name = "table_profile";
             this.table_profile.RowCount = 4;
@@ -141,157 +144,173 @@
             this.table_profile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.table_profile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.table_profile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.table_profile.Size = new System.Drawing.Size(370, 156);
+            this.table_profile.Size = new System.Drawing.Size(370, 174);
             this.table_profile.TabIndex = 11;
-            // 
-            // lbl_4_0
-            // 
-            this.lbl_4_0.AutoSize = true;
-            this.lbl_4_0.BackColor = System.Drawing.Color.White;
-            this.lbl_4_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_4_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_4_0.Location = new System.Drawing.Point(0, 117);
-            this.lbl_4_0.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_4_0.Name = "lbl_4_0";
-            this.lbl_4_0.Size = new System.Drawing.Size(148, 39);
-            this.lbl_4_0.TabIndex = 7;
-            this.lbl_4_0.Text = "Insurance:";
-            this.lbl_4_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_4_1
             // 
             this.lbl_4_1.AutoSize = true;
             this.lbl_4_1.BackColor = System.Drawing.Color.White;
             this.lbl_4_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_4_1.Location = new System.Drawing.Point(148, 117);
+            this.lbl_4_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_4_1.Location = new System.Drawing.Point(0, 129);
             this.lbl_4_1.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_4_1.Name = "lbl_4_1";
-            this.lbl_4_1.Size = new System.Drawing.Size(222, 39);
-            this.lbl_4_1.TabIndex = 6;
-            this.lbl_4_1.Text = "2020/10/5";
+            this.lbl_4_1.Size = new System.Drawing.Size(148, 45);
+            this.lbl_4_1.TabIndex = 7;
+            this.lbl_4_1.Text = "Insurance:";
             this.lbl_4_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbl_3_0
+            // lbl_4_2
             // 
-            this.lbl_3_0.AutoSize = true;
-            this.lbl_3_0.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_3_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_3_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_3_0.Location = new System.Drawing.Point(0, 78);
-            this.lbl_3_0.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_3_0.Name = "lbl_3_0";
-            this.lbl_3_0.Size = new System.Drawing.Size(148, 39);
-            this.lbl_3_0.TabIndex = 5;
-            this.lbl_3_0.Text = "Gender:";
-            this.lbl_3_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_4_2.AutoSize = true;
+            this.lbl_4_2.BackColor = System.Drawing.Color.White;
+            this.lbl_4_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_4_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_4_2.Location = new System.Drawing.Point(148, 129);
+            this.lbl_4_2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_4_2.Name = "lbl_4_2";
+            this.lbl_4_2.Size = new System.Drawing.Size(222, 45);
+            this.lbl_4_2.TabIndex = 6;
+            this.lbl_4_2.Text = "2020/10/5";
+            this.lbl_4_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_3_1
             // 
             this.lbl_3_1.AutoSize = true;
             this.lbl_3_1.BackColor = System.Drawing.Color.Transparent;
             this.lbl_3_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_3_1.Location = new System.Drawing.Point(148, 78);
+            this.lbl_3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_3_1.Location = new System.Drawing.Point(0, 86);
             this.lbl_3_1.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_3_1.Name = "lbl_3_1";
-            this.lbl_3_1.Size = new System.Drawing.Size(222, 39);
-            this.lbl_3_1.TabIndex = 4;
-            this.lbl_3_1.Text = "Man";
+            this.lbl_3_1.Size = new System.Drawing.Size(148, 43);
+            this.lbl_3_1.TabIndex = 5;
+            this.lbl_3_1.Text = "Gender:";
             this.lbl_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_3_2
+            // 
+            this.lbl_3_2.AutoSize = true;
+            this.lbl_3_2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_3_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_3_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_3_2.Location = new System.Drawing.Point(148, 86);
+            this.lbl_3_2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_3_2.Name = "lbl_3_2";
+            this.lbl_3_2.Size = new System.Drawing.Size(222, 43);
+            this.lbl_3_2.TabIndex = 4;
+            this.lbl_3_2.Text = "Man";
+            this.lbl_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbl_2_2
+            // 
+            this.lbl_2_2.AutoSize = true;
+            this.lbl_2_2.BackColor = System.Drawing.Color.White;
+            this.lbl_2_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_2_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2_2.Location = new System.Drawing.Point(148, 43);
+            this.lbl_2_2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_2_2.Name = "lbl_2_2";
+            this.lbl_2_2.Size = new System.Drawing.Size(222, 43);
+            this.lbl_2_2.TabIndex = 3;
+            this.lbl_2_2.Text = "4420860278";
+            this.lbl_2_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_2_1
             // 
             this.lbl_2_1.AutoSize = true;
             this.lbl_2_1.BackColor = System.Drawing.Color.White;
             this.lbl_2_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_2_1.Location = new System.Drawing.Point(148, 39);
+            this.lbl_2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2_1.Location = new System.Drawing.Point(0, 43);
             this.lbl_2_1.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_2_1.Name = "lbl_2_1";
-            this.lbl_2_1.Size = new System.Drawing.Size(222, 39);
-            this.lbl_2_1.TabIndex = 3;
-            this.lbl_2_1.Text = "4420860278";
+            this.lbl_2_1.Size = new System.Drawing.Size(148, 43);
+            this.lbl_2_1.TabIndex = 2;
+            this.lbl_2_1.Text = "NationalCode:";
             this.lbl_2_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lbl_2_0
+            // lbl_1_2
             // 
-            this.lbl_2_0.AutoSize = true;
-            this.lbl_2_0.BackColor = System.Drawing.Color.White;
-            this.lbl_2_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_2_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_2_0.Location = new System.Drawing.Point(0, 39);
-            this.lbl_2_0.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_2_0.Name = "lbl_2_0";
-            this.lbl_2_0.Size = new System.Drawing.Size(148, 39);
-            this.lbl_2_0.TabIndex = 2;
-            this.lbl_2_0.Text = "NationalCode:";
-            this.lbl_2_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_1_2.AutoSize = true;
+            this.lbl_1_2.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_1_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1_2.Location = new System.Drawing.Point(148, 0);
+            this.lbl_1_2.Margin = new System.Windows.Forms.Padding(0);
+            this.lbl_1_2.Name = "lbl_1_2";
+            this.lbl_1_2.Size = new System.Drawing.Size(222, 43);
+            this.lbl_1_2.TabIndex = 1;
+            this.lbl_1_2.Text = "Mohammad Mahdi Salmani";
+            this.lbl_1_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_1_1
             // 
             this.lbl_1_1.AutoSize = true;
             this.lbl_1_1.BackColor = System.Drawing.Color.Transparent;
             this.lbl_1_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_1_1.Location = new System.Drawing.Point(148, 0);
+            this.lbl_1_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1_1.Location = new System.Drawing.Point(0, 0);
             this.lbl_1_1.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_1_1.Name = "lbl_1_1";
-            this.lbl_1_1.Size = new System.Drawing.Size(222, 39);
-            this.lbl_1_1.TabIndex = 1;
-            this.lbl_1_1.Text = "Mohammad Mahdi Salmani";
+            this.lbl_1_1.Size = new System.Drawing.Size(148, 43);
+            this.lbl_1_1.TabIndex = 0;
+            this.lbl_1_1.Text = "Name:";
             this.lbl_1_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lbl_1_0
-            // 
-            this.lbl_1_0.AutoSize = true;
-            this.lbl_1_0.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_1_0.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_1_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_1_0.Location = new System.Drawing.Point(0, 0);
-            this.lbl_1_0.Margin = new System.Windows.Forms.Padding(0);
-            this.lbl_1_0.Name = "lbl_1_0";
-            this.lbl_1_0.Size = new System.Drawing.Size(148, 39);
-            this.lbl_1_0.TabIndex = 0;
-            this.lbl_1_0.Text = "Name:";
-            this.lbl_1_0.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::FinalProject.Properties.Resources.clinic;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(378, 270);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 270);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btn_add_appointment
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Location = new System.Drawing.Point(495, 499);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 39);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Exit";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_add_appointment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_add_appointment.AutoSize = true;
+            this.btn_add_appointment.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_add_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_appointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_appointment.ForeColor = System.Drawing.Color.White;
+            this.btn_add_appointment.Location = new System.Drawing.Point(6, 499);
+            this.btn_add_appointment.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_add_appointment.Name = "btn_add_appointment";
+            this.btn_add_appointment.Size = new System.Drawing.Size(205, 39);
+            this.btn_add_appointment.TabIndex = 5;
+            this.btn_add_appointment.Text = "New Appointment";
+            this.btn_add_appointment.UseVisualStyleBackColor = false;
+            this.btn_add_appointment.Click += new System.EventHandler(this.btn_add_appointment_Click);
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_exit.AutoSize = true;
+            this.btn_exit.BackColor = System.Drawing.Color.White;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btn_exit.Location = new System.Drawing.Point(595, 499);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(91, 39);
+            this.btn_exit.TabIndex = 4;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // table_search
             // 
             this.table_search.ColumnCount = 3;
             this.table_search.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.table_search.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table_search.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.table_search.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.table_search.Controls.Add(this.btn_search, 0, 0);
             this.table_search.Controls.Add(this.txt_search, 1, 0);
             this.table_search.Controls.Add(this.table_radiobtn, 2, 0);
@@ -301,7 +320,7 @@
             this.table_search.Name = "table_search";
             this.table_search.RowCount = 1;
             this.table_search.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table_search.Size = new System.Drawing.Size(598, 50);
+            this.table_search.Size = new System.Drawing.Size(698, 50);
             this.table_search.TabIndex = 3;
             // 
             // btn_search
@@ -331,8 +350,55 @@
             this.txt_search.Margin = new System.Windows.Forms.Padding(6);
             this.txt_search.MaxLength = 100;
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(401, 34);
+            this.txt_search.Size = new System.Drawing.Size(491, 34);
             this.txt_search.TabIndex = 0;
+            // 
+            // table_radiobtn
+            // 
+            this.table_radiobtn.ColumnCount = 1;
+            this.table_radiobtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.table_radiobtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.table_radiobtn.Controls.Add(this.radioButton1, 0, 0);
+            this.table_radiobtn.Controls.Add(this.radioButton2, 0, 1);
+            this.table_radiobtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.table_radiobtn.Location = new System.Drawing.Point(588, 3);
+            this.table_radiobtn.Margin = new System.Windows.Forms.Padding(0, 3, 12, 3);
+            this.table_radiobtn.Name = "table_radiobtn";
+            this.table_radiobtn.RowCount = 2;
+            this.table_radiobtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.table_radiobtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.table_radiobtn.Size = new System.Drawing.Size(98, 44);
+            this.table_radiobtn.TabIndex = 2;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButton1.Location = new System.Drawing.Point(0, 0);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(98, 22);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "doctor";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radioButton2.Location = new System.Drawing.Point(0, 22);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(98, 22);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "specialty";
+            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -353,6 +419,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
             this.StartTime,
             this.Duration,
             this.Specialty,
@@ -383,8 +450,16 @@
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(580, 437);
+            this.dataGridView1.Size = new System.Drawing.Size(680, 437);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 6;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // StartTime
             // 
@@ -392,6 +467,7 @@
             this.StartTime.MinimumWidth = 6;
             this.StartTime.Name = "StartTime";
             this.StartTime.ReadOnly = true;
+            this.StartTime.Width = 125;
             // 
             // Duration
             // 
@@ -399,6 +475,7 @@
             this.Duration.MinimumWidth = 6;
             this.Duration.Name = "Duration";
             this.Duration.ReadOnly = true;
+            this.Duration.Width = 80;
             // 
             // Specialty
             // 
@@ -406,7 +483,7 @@
             this.Specialty.MinimumWidth = 6;
             this.Specialty.Name = "Specialty";
             this.Specialty.ReadOnly = true;
-            this.Specialty.Width = 140;
+            this.Specialty.Width = 130;
             // 
             // Doctor
             // 
@@ -414,7 +491,7 @@
             this.Doctor.MinimumWidth = 6;
             this.Doctor.Name = "Doctor";
             this.Doctor.ReadOnly = true;
-            this.Doctor.Width = 140;
+            this.Doctor.Width = 130;
             // 
             // Edit
             // 
@@ -435,61 +512,17 @@
             this.Edit.Text = "";
             this.Edit.Width = 60;
             // 
-            // table_radiobtn
-            // 
-            this.table_radiobtn.ColumnCount = 1;
-            this.table_radiobtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.table_radiobtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.table_radiobtn.Controls.Add(this.radioButton1, 0, 0);
-            this.table_radiobtn.Controls.Add(this.radioButton2, 0, 1);
-            this.table_radiobtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table_radiobtn.Location = new System.Drawing.Point(501, 3);
-            this.table_radiobtn.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.table_radiobtn.Name = "table_radiobtn";
-            this.table_radiobtn.RowCount = 2;
-            this.table_radiobtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.table_radiobtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.table_radiobtn.Size = new System.Drawing.Size(85, 44);
-            this.table_radiobtn.TabIndex = 2;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton1.Location = new System.Drawing.Point(0, 0);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton1.Size = new System.Drawing.Size(85, 22);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "doctor";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButton2.Location = new System.Drawing.Point(0, 22);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.radioButton2.Size = new System.Drawing.Size(85, 22);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "specialty";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // HomeForm
+            // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1082, 553);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "HomeForm";
+            this.Name = "PatientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Home Page";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -502,9 +535,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.table_search.ResumeLayout(false);
             this.table_search.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.table_radiobtn.ResumeLayout(false);
             this.table_radiobtn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -512,29 +545,31 @@
         #endregion
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel table_profile;
-        private System.Windows.Forms.Label lbl_4_0;
-        private System.Windows.Forms.Label lbl_4_1;
-        private System.Windows.Forms.Label lbl_3_0;
         private System.Windows.Forms.Label lbl_3_1;
+        private System.Windows.Forms.Label lbl_3_2;
+        private System.Windows.Forms.Label lbl_2_2;
         private System.Windows.Forms.Label lbl_2_1;
-        private System.Windows.Forms.Label lbl_2_0;
+        private System.Windows.Forms.Label lbl_1_2;
         private System.Windows.Forms.Label lbl_1_1;
-        private System.Windows.Forms.Label lbl_1_0;
-        private System.Windows.Forms.Label lbl_profile;
         private System.Windows.Forms.Button btn_edit_profile;
-        private System.Windows.Forms.TableLayoutPanel table_search;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.TableLayoutPanel table_radiobtn;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        protected System.Windows.Forms.Label lbl_profile;
+        protected System.Windows.Forms.TableLayoutPanel table_search;
+        protected System.Windows.Forms.DataGridView dataGridView1;
+        protected System.Windows.Forms.TableLayoutPanel table_profile;
+        protected System.Windows.Forms.Label lbl_4_1;
+        protected System.Windows.Forms.Label lbl_4_2;
+        private System.Windows.Forms.Button btn_add_appointment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Specialty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.TableLayoutPanel table_radiobtn;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
     }
 }

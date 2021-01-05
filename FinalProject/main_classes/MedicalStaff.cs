@@ -1,12 +1,12 @@
-﻿using System.Diagnostics;
+﻿using System;
 using FinalProject.Interfaces;
+using System.Diagnostics;
 
 namespace FinalProject.Main_Classes
 {
     public class MedicalStaff : IPerson, ISalaried
     {
         private int _salary;
-        private double _tax;
 
         public MedicalStaff(IProfile profile, IBankAccount bankAccount)
         {
@@ -14,6 +14,7 @@ namespace FinalProject.Main_Classes
             Profile = profile;
         }
 
+        public long Id => long.Parse(Profile.NationalCode);
         public IProfile Profile { get; set; }
         public IBankAccount BankAccount { get; set; }
         public int Salary
@@ -25,21 +26,20 @@ namespace FinalProject.Main_Classes
                 _salary = value;
             }
         }
-        public double Tax
-        {
-            get => _tax;
-            set
-            {
-                Debug.Assert(value >= 0.0 && value <= 1.0);
-                _tax = value;
-            }
-        }
+
         protected int Wage { get; set; }
 
         public void GetSalary()
         {
-            double realSalary = (1.0 - _tax) * Salary + Wage;
-            BankAccount.IncreaseBalance((int)realSalary);
+            BankAccount.IncreaseBalance(Salary + Wage);
         }
+
+        public static bool operator ==(MedicalStaff a, MedicalStaff b)
+        {
+            return !(a is null) && !(b is null) && Equals(a.Profile, b.Profile);
+        }
+        public static bool operator !=(MedicalStaff a, MedicalStaff b) => !(a == b);
+        public override bool Equals(object obj) => this == obj as MedicalStaff;
+        public override int GetHashCode() => 1;
     }
 }

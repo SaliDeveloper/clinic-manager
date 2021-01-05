@@ -1,43 +1,27 @@
 ﻿using FinalProject.Interfaces;
-using System.Collections.Generic;
+using FinalProject.Main_Classes.Controllers;
 
 namespace FinalProject.Main_Classes
 {
     public class Patient : IPerson
     {
-        public Patient(IProfile profile, Insurance insurance = null)
+        public Patient(IProfile profile, AppointmentsManager manageAppointments, Insurance insurance = null)
         {
             Profile = profile;
             Insurance = insurance;
-            //ManageAppointments = new ManageAppointments();
         }
 
+        public long Id => long.Parse(Profile.NationalCode);
         public IProfile Profile { get; set; }
-        public ManageAppointments ManageAppointments { get; private set; }
         internal Insurance Insurance { get; set; }
-
-        public bool AddAppointment(Appointment appointment)
-        {
-            if (appointment.Patient != this) return false;
-            ManageAppointments.AddAppointments(appointment);
-            return true;
-        }
 
         public static bool operator ==(Patient a, Patient b)
         {
-            return !(a is null) && !(b is null) && a.Profile == b.Profile;
+            return !(a is null) && !(b is null) && Equals(a.Id, b.Id);
         }
-
         public static bool operator !=(Patient a, Patient b) => !(a == b);
 
-        public override bool Equals(object obj)
-        {
-            var patient = obj as Patient;
-            if (patient == null) return false;
-            return this == patient;
-        }
-
-        public override int GetHashCode() => (Profile != null ? Profile.GetHashCode() : 0);
+        public override bool Equals(object obj) => this == obj as Patient;
 
         public override string ToString()
         {

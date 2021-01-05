@@ -4,23 +4,18 @@ namespace FinalProject.Main_Classes
 {
     public class Appointment
     {
-        public Appointment(Patient patient, Dentist dentist, DateTime startTime, bool status = false)
+        public Appointment() { PatientId = DoctorId = Id = -1; }
+        public Appointment(long patientId, long doctor, DateTime startTime, int id = -1)
         {
-            Patient = patient;
-            Dentist = dentist;
+            PatientId = patientId;
+            DoctorId = doctor;
             StartTime = startTime;
-            Status = status;
+            Id = id;
         }
-        public DateTime StartTime { get; set; }
-        public int Duration => Dentist.VisitDuration;
-        public string Specialty => Dentist.GetSpecialty();
-        public Patient Patient { get; set; }
-        public Dentist Dentist { get; set; }
-        public bool Status { get; set; }
 
-        public override string ToString()
-        {
-            return Patient.ToString() + "#" + Dentist.ToString() + "#" + StartTime.ToString("G");
-        }
+        public long Id { get; set; }
+        public DateTime StartTime { get; set; }
+        public long PatientId { get; set; }
+        public long DoctorId { get; set; }
     }
 }

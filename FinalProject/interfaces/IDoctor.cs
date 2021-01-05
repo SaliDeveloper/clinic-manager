@@ -1,14 +1,17 @@
-﻿using System;
+﻿using FinalProject.Main_Classes;
+using System;
 using System.Collections.Generic;
-using FinalProject.Main_Classes;
 
 namespace FinalProject.Interfaces
 {
     public interface IDoctor
     {
-        List<DayOfWeek> WorkingDays { get; set; }
-        List<Appointment> Appointments { get; set; }
+        string Type { get; }
+        long Id { get; }
+        IProfile Profile { get; set; }
+        List<DayOfWeek> Attendances { get; set; }
+        List<long> PatientsId { get; set; }
         int VisitDuration { get; }
-
+        long SalaryBase { get; }
     }
 }

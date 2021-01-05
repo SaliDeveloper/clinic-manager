@@ -1,37 +1,41 @@
-﻿using System;
+﻿using FinalProject.Interfaces;
+using JsonSubTypes;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using FinalProject.Interfaces;
+using System.Linq;
 
 namespace FinalProject.Main_Classes
 {
     public abstract class Dentist : MedicalStaff, IDoctor
     {
-        private int _visitDuration;
-
-        public Dentist(IProfile person, IBankAccount bankAccount, int visitDuration, List<DayOfWeek> workingDays)
-            : base(person, bankAccount)
+        public static List<string> Specialties;
+        static Dentist()
         {
-            VisitDuration = visitDuration;
-            WorkingDays = workingDays;
+            var baseType = typeof(Dentist);
+            var types = baseType.Assembly.GetTypes().Where(t => t.IsSubclassOf(baseType));
+            Specialties = types.Select(type => type.Name).ToList();
         }
 
-        public List<DayOfWeek> WorkingDays { get; set; }
-        public ManageAppointments ManageAppointments { get; set; }
-        public int VisitDuration
+        public string Type => GetType().Name;
+        public static Newtonsoft.Json.JsonConverter JsonConverter => JsonSubtypesConverterBuilder
+            .Of(typeof(Dentist), "_type").Build();
+
+        public Dentist(IProfile profile, IBankAccount bankAccount
+            , List<DayOfWeek> attendances) : base(profile, bankAccount)
         {
-            get => _visitDuration;
-            protected set
-            {
-                Debug.Assert(value > 0);
-                _visitDuration = value;
-            }
+            Attendances = attendances;
+            PatientsId = new List<long>();
         }
-        public abstract string GetSpecialty();
+
+        public List<DayOfWeek> Attendances { get; set; }
+        public List<long> PatientsId { get; set; }
+        public abstract int VisitDuration { get; }
+
+        public abstract long SalaryBase { get; set; }
+
         public override string ToString()
         {
             return "Dr." + Profile.LastName;
         }
     }
-
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject.Main_Classes;
+using FinalProject.Main_Classes.Controllers;
 
 namespace FinalProject
 {
@@ -20,8 +22,13 @@ namespace FinalProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form form = new HomeForm();
+            IProfile profile = new Profile("Mahdi", "Salmani", "4420860278");
+            var manageAppointments = new AppointmentsManager("appointments.txt",new JsonSaveLoadAppointments());
+            var patient = new Patient(profile,manageAppointments);
+
+            Form form = new PatientForm(manageAppointments,patient);
             form.ShowDialog();
+            this.Close();
         }
     }
 }

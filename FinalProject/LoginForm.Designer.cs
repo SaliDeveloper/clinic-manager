@@ -30,13 +30,13 @@
         {
             this.lbl_type = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.linklbl_forgot_password = new System.Windows.Forms.LinkLabel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_signup = new System.Windows.Forms.Button();
             this.cmb_login_type = new System.Windows.Forms.ComboBox();
@@ -66,17 +66,17 @@
             this.txt_username.Size = new System.Drawing.Size(221, 30);
             this.txt_username.TabIndex = 3;
             // 
-            // textBox1
+            // txt_password
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox1.Location = new System.Drawing.Point(16, 265);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 30);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txt_password.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_password.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txt_password.Location = new System.Drawing.Point(16, 265);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(221, 30);
+            this.txt_password.TabIndex = 4;
+            this.txt_password.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -125,32 +125,32 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btn_confirm
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 51);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "CONFIRM";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_confirm.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirm.ForeColor = System.Drawing.Color.White;
+            this.btn_confirm.Location = new System.Drawing.Point(16, 367);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(221, 51);
+            this.btn_confirm.TabIndex = 9;
+            this.btn_confirm.Text = "CONFIRM";
+            this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.button1_Click);
             // 
-            // linkLabel1
+            // linklbl_forgot_password
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(62, 427);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(122, 17);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot Password?";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linklbl_forgot_password.AutoSize = true;
+            this.linklbl_forgot_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linklbl_forgot_password.LinkColor = System.Drawing.Color.RoyalBlue;
+            this.linklbl_forgot_password.Location = new System.Drawing.Point(62, 427);
+            this.linklbl_forgot_password.Name = "linklbl_forgot_password";
+            this.linklbl_forgot_password.Size = new System.Drawing.Size(122, 17);
+            this.linklbl_forgot_password.TabIndex = 10;
+            this.linklbl_forgot_password.TabStop = true;
+            this.linklbl_forgot_password.Text = "Forgot Password?";
+            this.linklbl_forgot_password.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // checkBox1
             // 
@@ -192,7 +192,6 @@
             this.cmb_login_type.Items.AddRange(new object[] {
             "Patient",
             "Admin",
-            "Doctor",
             "Receptionist"});
             this.cmb_login_type.Location = new System.Drawing.Point(75, 107);
             this.cmb_login_type.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
@@ -209,18 +208,19 @@
             this.Controls.Add(this.cmb_login_type);
             this.Controls.Add(this.btn_signup);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.linklbl_forgot_password);
+            this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.lbl_type);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Clinic";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -232,13 +232,13 @@
 
         private System.Windows.Forms.Label lbl_type;
         private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_login;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btn_confirm;
+        private System.Windows.Forms.LinkLabel linklbl_forgot_password;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btn_signup;
         private System.Windows.Forms.ComboBox cmb_login_type;

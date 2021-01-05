@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FinalProject.Main_Classes.Dental_Specialties
 {
+    [JsonConverter(typeof(PediatricDentistry))]
     class PediatricDentistry : Dentist
     {
-        public PediatricDentistry(IProfile person, IBankAccount bankAccount, int visitDuration,
-            List<DayOfWeek> workingDays) : base(person, bankAccount, visitDuration, workingDays)
+        private static long _salaryBase = 100;
+
+        public PediatricDentistry(IProfile person, IBankAccount bankAccount,
+            List<DayOfWeek> attendances) : base(person, bankAccount, attendances)
         {
         }
-        public override string GetSpecialty() => "Pediatric Dentistry";
+        public override int VisitDuration => 40;
+        public override long SalaryBase { get => _salaryBase; set => _salaryBase = value; }
     }
 }
