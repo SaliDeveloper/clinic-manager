@@ -1,4 +1,4 @@
-﻿namespace FinalProject
+﻿namespace FinalProject.Views
 {
     partial class PatientForm
     {

@@ -1,13 +1,10 @@
-﻿using FinalProject.Main_Classes;
-using FinalProject.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using FinalProject.Interfaces;
+using FinalProject.Main_Classes;
 using FinalProject.Main_Classes.Controllers;
-using FinalProject.Main_Classes.Dental_Specialties;
 
-namespace FinalProject
+namespace FinalProject.Views
 {
     public partial class PatientForm : Form
     {
@@ -70,9 +67,14 @@ namespace FinalProject
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != 5) return;
-            _appointmentsManager.RemoveAppointment(_appointments[e.RowIndex]);
-            _appointments.RemoveAt(e.RowIndex);
-            FillAppointmentsTable(_appointments);
+            var result = MessageBox.Show("Are you sure?", "Delete Appointment"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                _appointmentsManager.RemoveAppointment(_appointments[e.RowIndex]);
+                _appointments.RemoveAt(e.RowIndex);
+                FillAppointmentsTable(_appointments);
+            }
         }
     }
 }
