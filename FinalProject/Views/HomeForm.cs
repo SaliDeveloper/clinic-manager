@@ -9,17 +9,17 @@ namespace FinalProject.Views
     public partial class PatientForm : Form
     {
         private readonly Patient _patient;
-        private readonly AppointmentsManager _appointmentsManager;
+        private readonly DataManager _dataManager;
         private readonly DoctorsManager _doctorsManager;
         private List<Appointment> _appointments;
 
-        public PatientForm(AppointmentsManager appointmentsManager, Patient patient)
+        public PatientForm(DataManager dataManager, Patient patient)
         {
             InitializeComponent();
-            _appointmentsManager = appointmentsManager;
+            _dataManager = dataManager;
             _patient = patient;
             FillProfileTable();
-            _appointments = appointmentsManager.Appointments.FindAll(a => a.PatientId == patient.Id);
+            _appointments = dataManager.Items.FindAll(a => a.PatientId == patient.Id);
 
             _doctorsManager = new DoctorsManager("doctors.txt", new JsonSaveLoadDentists());
             FillAppointmentsTable(_appointments);
@@ -57,10 +57,10 @@ namespace FinalProject.Views
 
         private void btn_add_appointment_Click(object sender, EventArgs e)
         {
-            Form form = new AppointmentForm(_appointmentsManager, _patient,_doctorsManager);
+            Form form = new AppointmentForm(_dataManager, _patient,_doctorsManager);
             var result = form.ShowDialog();
             if (result == DialogResult.Cancel) return;
-            _appointments = _appointmentsManager.Appointments;
+            _appointments = _dataManager.Items;
             FillAppointmentsTable(_appointments);
         }
 
@@ -71,10 +71,14 @@ namespace FinalProject.Views
                 , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                _appointmentsManager.RemoveAppointment(_appointments[e.RowIndex]);
+                _dataManager.RemoveItem(_appointments[e.RowIndex]);
                 _appointments.RemoveAt(e.RowIndex);
                 FillAppointmentsTable(_appointments);
             }
+        }
+
+        private void btn_edit_profile_Click(object sender, EventArgs e)
+        {
         }
     }
 }

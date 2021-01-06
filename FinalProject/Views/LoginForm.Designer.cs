@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lbl_type = new System.Windows.Forms.Label();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.txt_password = new System.Windows.Forms.TextBox();
+            this.txt_username = new FinalProject.Views.CustomTextBox();
+            this.txt_password = new FinalProject.Views.CustomTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_login = new System.Windows.Forms.Label();
@@ -59,23 +59,31 @@
             // 
             this.txt_username.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_username.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txt_username.ForeColor = System.Drawing.Color.DarkGray;
+            this.txt_username.HintColor = System.Drawing.Color.DarkGray;
+            this.txt_username.HintText = "UserName";
             this.txt_username.Location = new System.Drawing.Point(16, 188);
             this.txt_username.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(221, 30);
             this.txt_username.TabIndex = 3;
+            this.txt_username.Text = "UserName";
+            this.txt_username.TextColor = System.Drawing.SystemColors.WindowText;
             // 
             // txt_password
             // 
             this.txt_password.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_password.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txt_password.ForeColor = System.Drawing.Color.DarkGray;
+            this.txt_password.HintColor = System.Drawing.Color.DarkGray;
+            this.txt_password.HintText = "Password";
             this.txt_password.Location = new System.Drawing.Point(16, 265);
             this.txt_password.Margin = new System.Windows.Forms.Padding(6, 3, 6, 3);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(221, 30);
             this.txt_password.TabIndex = 4;
+            this.txt_password.Text = "Password";
+            this.txt_password.TextColor = System.Drawing.SystemColors.WindowText;
             this.txt_password.UseSystemPasswordChar = true;
             // 
             // label2
@@ -180,6 +188,7 @@
             this.btn_signup.TabIndex = 12;
             this.btn_signup.Text = "Sign up";
             this.btn_signup.UseVisualStyleBackColor = true;
+            this.btn_signup.Click += new System.EventHandler(this.btn_sign_up_Click);
             // 
             // cmb_login_type
             // 
@@ -231,8 +240,8 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_type;
-        private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.TextBox txt_password;
+        private CustomTextBox txt_username;
+        private CustomTextBox txt_password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_login;
