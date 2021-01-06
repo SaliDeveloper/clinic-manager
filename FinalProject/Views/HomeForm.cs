@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using FinalProject.Interfaces;
 using FinalProject.Main_Classes;
 using FinalProject.Main_Classes.Controllers;
 
@@ -9,19 +10,19 @@ namespace FinalProject.Views
     public partial class PatientForm : Form
     {
         private readonly Patient _patient;
-        private readonly DataManager _dataManager;
-        private readonly DoctorsManager _doctorsManager;
+        private readonly DataManager<Appointment> _appointmentsManager;
+        private readonly DataManager<IDoctor> _doctorsManager;
         private List<Appointment> _appointments;
 
-        public PatientForm(DataManager dataManager, Patient patient)
+        public PatientForm(DataManager<Appointment> dataManager, Patient patient)
         {
             InitializeComponent();
-            _dataManager = dataManager;
+            _appointmentsManager = dataManager;
             _patient = patient;
             FillProfileTable();
             _appointments = dataManager.Items.FindAll(a => a.PatientId == patient.Id);
 
-            _doctorsManager = new DoctorsManager("doctors.txt", new JsonSaveLoadDentists());
+            _doctorsManager = new DataManager<IDoctor>("doctors.txt", new JsonSaveLoadDentists());
             FillAppointmentsTable(_appointments);
         }
 
@@ -39,7 +40,7 @@ namespace FinalProject.Views
             dataGridView1.Rows.Clear();
             foreach (var item in appointments)
             {
-                var doctor = _doctorsManager.Doctors.Find(a => a.Id == item.DoctorId);
+                var doctor = _doctorsManager.Items.Find(a => a.Id == item.DoctorId);
                 dataGridView1.Rows.Add(item.StartTime.ToString("M"),
                     item.StartTime.ToString("t"),
                     doctor.VisitDuration,
@@ -57,10 +58,10 @@ namespace FinalProject.Views
 
         private void btn_add_appointment_Click(object sender, EventArgs e)
         {
-            Form form = new AppointmentForm(_dataManager, _patient,_doctorsManager);
+            Form form = new AppointmentForm(_appointmentsManager, _patient,_doctorsManager);
             var result = form.ShowDialog();
             if (result == DialogResult.Cancel) return;
-            _appointments = _dataManager.Items;
+            _appointments = _appointmentsManager.Items;
             FillAppointmentsTable(_appointments);
         }
 
@@ -71,7 +72,7 @@ namespace FinalProject.Views
                 , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                _dataManager.RemoveItem(_appointments[e.RowIndex]);
+                _appointmentsManager.RemoveItem(_appointments[e.RowIndex]);
                 _appointments.RemoveAt(e.RowIndex);
                 FillAppointmentsTable(_appointments);
             }

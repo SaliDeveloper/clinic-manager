@@ -117,7 +117,7 @@
             this.cmb_doctors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_doctors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_doctors.FormattingEnabled = true;
-            this.cmb_doctors.Location = new System.Drawing.Point(124, 100);
+            this.cmb_doctors.Location = new System.Drawing.Point(124, 101);
             this.cmb_doctors.Margin = new System.Windows.Forms.Padding(6);
             this.cmb_doctors.Name = "cmb_doctors";
             this.cmb_doctors.Size = new System.Drawing.Size(243, 28);
@@ -156,7 +156,7 @@
             this.cmb_specialties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cmb_specialties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_specialties.FormattingEnabled = true;
-            this.cmb_specialties.Location = new System.Drawing.Point(124, 30);
+            this.cmb_specialties.Location = new System.Drawing.Point(124, 31);
             this.cmb_specialties.Margin = new System.Windows.Forms.Padding(6);
             this.cmb_specialties.Name = "cmb_specialties";
             this.cmb_specialties.Size = new System.Drawing.Size(243, 28);
@@ -236,7 +236,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.table_appointment);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "AppointmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Appointment";

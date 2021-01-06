@@ -27,7 +27,8 @@ namespace FinalProject.Views
             ctxt_last_name.Text = patient.Profile.LastName;
             ctxt_national_code.Text = patient.Profile.NationalCode;
             ctxt_username.Text = patient.Account.UserName;
-            ctxt_pre_password.Visible = true;
+            ctxt_pre_password.Enabled = true;
+            ctxt_pre_password.Text = "";
         }
 
         private void btn_confirm_Click(object sender, EventArgs e)

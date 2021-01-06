@@ -18,7 +18,7 @@ namespace FinalProject.Views
         private void button1_Click(object sender, EventArgs e)
         {
             IProfile profile = new Profile("Mahdi", "Salmani", "4420860278");
-            var manageAppointments = new DataManager("appointments.txt",new JsonSaveLoadData());
+            var manageAppointments = new DataManager<Appointment>("appointments.txt",new JsonSaveLoadData<Appointment>());
             var patient = new Patient(profile);
 
             Form form = new PatientForm(manageAppointments,patient);

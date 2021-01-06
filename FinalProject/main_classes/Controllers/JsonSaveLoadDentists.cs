@@ -8,13 +8,13 @@ using System.Text.Json;
 
 namespace FinalProject.Main_Classes.Controllers
 {
-    public class JsonSaveLoadDentists : ISaveLoadDoctors
+    public class JsonSaveLoadDentists : ISaveLoadData<IDoctor>
     {
-        public void SaveDoctors(string filePath, List<IDoctor> doctors)
+        public void SaveData(string filePath, List<IDoctor> doctors)
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(doctors));
         }
-        public List<IDoctor> LoadDoctors(string path)
+        public List<IDoctor> LoadData(string path)
         {
             var doctors = new List<IDoctor>();
             if (File.Exists(path))
@@ -49,7 +49,7 @@ namespace FinalProject.Main_Classes.Controllers
             else
             {
                 File.Create(path).Close();
-                SaveDoctors(path, doctors);
+                SaveData(path, doctors);
             }
             return doctors;
         }

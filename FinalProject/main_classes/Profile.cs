@@ -16,6 +16,11 @@ namespace FinalProject.Main_Classes
     public class Profile : IProfile
     {
         private string _nationalCode;
+
+        public Profile()
+        {
+        }
+
         public Profile(string firstName, string lastName, string nationalCode, Gender gender = Gender.Man)
         {
             FirstName = firstName;

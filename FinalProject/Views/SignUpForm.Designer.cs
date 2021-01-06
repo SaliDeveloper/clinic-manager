@@ -308,6 +308,7 @@
             // ctxt_pre_password
             // 
             this.ctxt_pre_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctxt_pre_password.Enabled = false;
             this.ctxt_pre_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctxt_pre_password.ForeColor = System.Drawing.Color.DarkGray;
             this.ctxt_pre_password.HintColor = System.Drawing.Color.DarkGray;
@@ -316,9 +317,8 @@
             this.ctxt_pre_password.Name = "ctxt_pre_password";
             this.ctxt_pre_password.Size = new System.Drawing.Size(240, 30);
             this.ctxt_pre_password.TabIndex = 20;
-            this.ctxt_pre_password.Text = "Previous Password*";
+            this.ctxt_pre_password.Text = "Enter Password:";
             this.ctxt_pre_password.TextColor = System.Drawing.SystemColors.WindowText;
-            this.ctxt_pre_password.Visible = false;
             // 
             // SignUpForm
             // 

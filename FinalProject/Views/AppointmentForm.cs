@@ -3,7 +3,6 @@ using FinalProject.Main_Classes;
 using FinalProject.Main_Classes.Controllers;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,12 +10,12 @@ namespace FinalProject.Views
 {
     public partial class AppointmentForm : Form
     {
-        private readonly AppointmentsManager _appointmentsManager;
-        private readonly DoctorsManager _doctorsManager;
+        private readonly DataManager<Appointment> _appointmentsManager;
+        private readonly DataManager<IDoctor> _doctorsManager;
         private readonly Patient _patient;
         private List<IDoctor> _doctors = new List<IDoctor>();
 
-        private AppointmentForm(AppointmentsManager appointmentsManager, Patient patient)
+        private AppointmentForm(DataManager<Appointment> appointmentsManager, Patient patient)
         {
             InitializeComponent();
             _appointmentsManager = appointmentsManager;
@@ -26,8 +25,8 @@ namespace FinalProject.Views
             cmb_specialties.SelectedIndex = 0;
         }
 
-        public AppointmentForm(AppointmentsManager appointmentsManager, Patient patient,
-            DoctorsManager doctorsManager) : this(appointmentsManager, patient)
+        public AppointmentForm(DataManager<Appointment> appointmentsManager, Patient patient,
+            DataManager<IDoctor> doctorsManager) : this(appointmentsManager, patient)
         {
             _doctorsManager = doctorsManager;
         }
@@ -43,7 +42,7 @@ namespace FinalProject.Views
 
                 var appointment = new Appointment(_patient.Id, _doctors[cmb_doctors.SelectedIndex].Id,
                     DateTime.Now /*  todo  */);
-                _appointmentsManager.AddAppointment(appointment);
+                _appointmentsManager.AddItem(appointment);
                 Close();
             }
             catch (Exception exc)
@@ -55,7 +54,7 @@ namespace FinalProject.Views
         private void cmb_specialties_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_doctorsManager == null) return;
-            _doctors = _doctorsManager.Doctors
+            _doctors = _doctorsManager.Items
                 .FindAll(a => a.GetType().Name == cmb_specialties.Text);
 
             cmb_doctors.DataSource = _doctors.Select(a => a.ToString()).ToList();

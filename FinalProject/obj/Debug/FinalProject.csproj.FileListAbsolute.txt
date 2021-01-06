@@ -38,3 +38,4 @@ C:\Users\Mahdi\source\repos\FinalProject\FinalProject\bin\Debug\System.Json.dll
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\bin\Debug\System.Json.xml
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.Views.LoginForm.resources
 C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.Views.PatientForm.resources
+C:\Users\Mahdi\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.Views.SignUpForm.resources

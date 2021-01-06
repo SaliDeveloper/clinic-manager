@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\ISalaried.cs" />
+    <Compile Include="Interfaces\IHavingUserAccount.cs" />
     <Compile Include="Main_Classes\Appointment.cs" />
     <Compile Include="Main_Classes\Controllers\JsonSaveLoadDentists.cs" />
     <Compile Include="Main_Classes\Dental_Specialties\Prosthodontics.cs" />
@@ -105,14 +106,16 @@
     <Compile Include="Main_Classes\Dental_Specialties\Orthodontics.cs" />
     <Compile Include="Main_Classes\Dentist.cs" />
     <Compile Include="Main_Classes\BankAccount.cs" />
-    <Compile Include="Main_Classes\Controllers\AppointmentsManager.cs" />
-    <Compile Include="Main_Classes\Controllers\DoctorsManager.cs" />
+    <Compile Include="Main_Classes\Controllers\DataManager.cs" />
     <Compile Include="Main_Classes\Profile.cs" />
     <Compile Include="Interfaces\IDoctor.cs" />
     <Compile Include="Main_Classes\Insurance.cs" />
     <Compile Include="Main_Classes\MedicalStaff.cs" />
     <Compile Include="Main_Classes\Patient.cs" />
     <Compile Include="Main_Classes\Shareholder.cs" />
+    <Compile Include="Views\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +136,12 @@
     <Compile Include="Views\AppointmentForm.Designer.cs">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -147,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AppointmentForm.resx">
       <DependentUpon>AppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
