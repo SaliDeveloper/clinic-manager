@@ -10,7 +10,6 @@ namespace FinalProject.Interfaces
         long Id { get; }
         IProfile Profile { get; set; }
         List<DayOfWeek> Attendances { get; set; }
-        List<long> PatientsId { get; set; }
         int VisitDuration { get; }
         long SalaryBase { get; }
     }

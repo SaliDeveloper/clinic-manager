@@ -39,12 +39,12 @@
             this.ctxt_last_name = new FinalProject.Views.CustomTextBox();
             this.ctxt_name = new FinalProject.Views.CustomTextBox();
             this.table_account = new System.Windows.Forms.TableLayoutPanel();
+            this.ctxt_pre_password = new FinalProject.Views.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ctxt_confirm_password = new FinalProject.Views.CustomTextBox();
             this.ctxt_password = new FinalProject.Views.CustomTextBox();
             this.ctxt_username = new FinalProject.Views.CustomTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ctxt_pre_password = new FinalProject.Views.CustomTextBox();
             this.table_profile.SuspendLayout();
             this.table_gender.SuspendLayout();
             this.table_account.SuspendLayout();
@@ -200,7 +200,7 @@
             this.ctxt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctxt_name.ForeColor = System.Drawing.Color.DarkGray;
             this.ctxt_name.HintColor = System.Drawing.Color.DarkGray;
-            this.ctxt_name.HintText = "First Name*";
+            this.ctxt_name.HintText = "First Name";
             this.ctxt_name.Location = new System.Drawing.Point(15, 66);
             this.ctxt_name.Name = "ctxt_name";
             this.ctxt_name.Size = new System.Drawing.Size(240, 30);
@@ -233,6 +233,21 @@
             this.table_account.Size = new System.Drawing.Size(270, 300);
             this.table_account.TabIndex = 4;
             // 
+            // ctxt_pre_password
+            // 
+            this.ctxt_pre_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctxt_pre_password.Enabled = false;
+            this.ctxt_pre_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctxt_pre_password.ForeColor = System.Drawing.Color.DarkGray;
+            this.ctxt_pre_password.HintColor = System.Drawing.Color.DarkGray;
+            this.ctxt_pre_password.HintText = "Previous Password*";
+            this.ctxt_pre_password.Location = new System.Drawing.Point(15, 125);
+            this.ctxt_pre_password.Name = "ctxt_pre_password";
+            this.ctxt_pre_password.Size = new System.Drawing.Size(240, 30);
+            this.ctxt_pre_password.TabIndex = 20;
+            this.ctxt_pre_password.Text = "Enter Password:";
+            this.ctxt_pre_password.TextColor = System.Drawing.SystemColors.WindowText;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -243,7 +258,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(234, 28);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Account Info";
+            this.label3.Text = "UserAccount Info";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ctxt_confirm_password
@@ -304,21 +319,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 60);
             this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // ctxt_pre_password
-            // 
-            this.ctxt_pre_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctxt_pre_password.Enabled = false;
-            this.ctxt_pre_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctxt_pre_password.ForeColor = System.Drawing.Color.DarkGray;
-            this.ctxt_pre_password.HintColor = System.Drawing.Color.DarkGray;
-            this.ctxt_pre_password.HintText = "Previous Password*";
-            this.ctxt_pre_password.Location = new System.Drawing.Point(15, 125);
-            this.ctxt_pre_password.Name = "ctxt_pre_password";
-            this.ctxt_pre_password.Size = new System.Drawing.Size(240, 30);
-            this.ctxt_pre_password.TabIndex = 20;
-            this.ctxt_pre_password.Text = "Enter Password:";
-            this.ctxt_pre_password.TextColor = System.Drawing.SystemColors.WindowText;
             // 
             // SignUpForm
             // 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
+using Newtonsoft.Json;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace FinalProject.Main_Classes.Controllers
 {
@@ -26,18 +27,23 @@ namespace FinalProject.Main_Classes.Controllers
         public void AddItem(T item)
         {
             Items.Add(item);
-            SaveLoader.SaveData(FilePath, Items);
         }
 
         public bool RemoveItem(T item)
         {
-            var result = Items.Remove(item);
-            if (!result) return false;
-            SaveLoader.SaveData(FilePath, Items);
-            return true;
+            return Items.Remove(item);
         }
 
-        public void NotifyDataSetChange()
+        public void NotifyDataSetChange(List<T> items = null)
+        {
+            if (items != null)
+            {
+                Items = items;
+            }
+            SaveLoader.SaveData(FilePath, Items);
+        }
+
+        ~DataManager()
         {
             SaveLoader.SaveData(FilePath, Items);
         }
@@ -47,13 +53,13 @@ namespace FinalProject.Main_Classes.Controllers
     {
         public void SaveData(string filePath, List<T> items)
         {
-            File.WriteAllText(filePath, JsonSerializer.Serialize(items));
+            File.WriteAllText(filePath, JsonConvert.SerializeObject(items));
         }
         public List<T> LoadData(string path)
         {
             if (File.Exists(path))
             {
-                return JsonSerializer.Deserialize<List<T>>(File.ReadAllText(path));
+                return JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(path));
             }
             File.Create(path).Close();
             var items = new List<T>();

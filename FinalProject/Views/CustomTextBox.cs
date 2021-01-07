@@ -8,7 +8,15 @@ namespace FinalProject.Views
     {
         private string _hintText = "";
         public Color TextColor { get; set; }
-        public Color HintColor { get; set; }
+        public Color HintColor { get; set; } = Color.DarkGray;
+
+        public string GetText() => ForeColor == HintColor ? "" : Text;
+
+        public void SetText(string value)
+        {
+            ForeColor = TextColor;
+            Text = value;
+        }
 
         public string HintText
         {
@@ -25,9 +33,6 @@ namespace FinalProject.Views
 
         public CustomTextBox()
         {
-            // get default color of text
-            HintColor = Color.DarkGray;
-            TextColor = ForeColor;
             // Add event handler for when the control gets focus
             GotFocus += (object sender, EventArgs e) =>
             {

@@ -2,7 +2,7 @@
 {
     public interface IHavingUserAccount
     {
-        UserAccount Account { get; }
+        UserAccount UserAccount { get; }
     }
 
     public class UserAccount

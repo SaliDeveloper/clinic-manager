@@ -145,7 +145,7 @@
             this.btn_confirm.TabIndex = 9;
             this.btn_confirm.Text = "CONFIRM";
             this.btn_confirm.UseVisualStyleBackColor = false;
-            this.btn_confirm.Click += new System.EventHandler(this.button1_Click);
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
             // linklbl_forgot_password
             // 

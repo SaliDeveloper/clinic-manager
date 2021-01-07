@@ -97,6 +97,7 @@
     <Compile Include="Interfaces\ISalaried.cs" />
     <Compile Include="Interfaces\IHavingUserAccount.cs" />
     <Compile Include="Main_Classes\Appointment.cs" />
+    <Compile Include="Main_Classes\Controllers\JsonDataConverter.cs" />
     <Compile Include="Main_Classes\Controllers\JsonSaveLoadDentists.cs" />
     <Compile Include="Main_Classes\Dental_Specialties\Prosthodontics.cs" />
     <Compile Include="Main_Classes\Dental_Specialties\PediatricDentistry.cs" />

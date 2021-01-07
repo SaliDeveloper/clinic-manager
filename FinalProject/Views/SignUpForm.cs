@@ -1,89 +1,110 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using FinalProject.Interfaces;
 using FinalProject.Main_Classes;
+using FinalProject.Main_Classes.Controllers;
+using System;
+using System.Windows.Forms;
 
 namespace FinalProject.Views
 {
     public partial class SignUpForm : Form
     {
-        private readonly List<Patient> _patients;
-        public SignUpForm(List<Patient> patients)
+        private readonly DataManager<Patient> _patientsManager;
+        private readonly Patient _patient;
+        public SignUpForm(DataManager<Patient> patientsManager)
         {
             InitializeComponent();
-            _patients = patients;
+            _patientsManager = patientsManager;
             btn_cancel.Select();
         }
 
-        public SignUpForm(List<Patient> patients, Patient patient) : this(patients)
+        public SignUpForm(Patient patient)
         {
-            ctxt_name.Text = patient.Profile.FirstName;
-            ctxt_last_name.Text = patient.Profile.LastName;
-            ctxt_national_code.Text = patient.Profile.NationalCode;
-            ctxt_username.Text = patient.Account.UserName;
+            InitializeComponent();
+            _patient = patient;
+            btn_cancel.Select();
+            ctxt_name.SetText(patient.Profile.FirstName);
+            ctxt_last_name.SetText(patient.Profile.LastName);
+            ctxt_national_code.SetText(patient.Profile.NationalCode);
+            ctxt_username.SetText(patient.UserAccount.UserName);
             ctxt_pre_password.Enabled = true;
-            ctxt_pre_password.Text = "";
+            radioBtn_Man.Checked = patient.Profile.Gender == Gender.Man;
+            radioBtn_Woman.Checked = patient.Profile.Gender == Gender.Woman;
+            ctxt_national_code.Enabled = false;
         }
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(ctxt_name.Text))
-                {
-                    throw new Exception("Please enter your first name.");
-                }
+                var firstName = (string.IsNullOrEmpty(ctxt_name.GetText())) ? "" : ctxt_name.GetText();
 
-                var firstName = ctxt_name.Text;
-
-                if (string.IsNullOrEmpty(ctxt_last_name.Text))
-                {
+                if (string.IsNullOrEmpty(ctxt_last_name.GetText()))
                     throw new Exception("Please enter your last name.");
-                }
 
-                var lastName = ctxt_last_name.Text;
+                var lastName = ctxt_last_name.GetText();
 
-                if (string.IsNullOrEmpty(ctxt_national_code.Text) ||
-                    long.TryParse(ctxt_national_code.Text, out _))
-                {
+                if (string.IsNullOrEmpty(ctxt_national_code.GetText()) || !long.TryParse(ctxt_national_code.GetText(), out _))
                     throw new Exception("Please enter a valid national code");
-                }
 
-                var nationalCode = ctxt_national_code.Text;
-                var userName = string.IsNullOrEmpty(ctxt_username.Text) ? lastName : ctxt_username.Text;
+                var nationalCode = ctxt_national_code.GetText();
+                var userName = string.IsNullOrEmpty(ctxt_username.GetText()) ? lastName : ctxt_username.GetText();
 
-                if (_patients.Exists(a => a.Profile.NationalCode == nationalCode || a.Account.UserName == userName))
+                if (ctxt_national_code.Enabled)
                 {
-                    throw new Exception("this account already exists.");
+                    checkForAddNewItem(nationalCode, userName);
+                    checkForPassword();
+                    var password = ctxt_password.GetText();
+                    var gender = (radioBtn_Woman.Checked) ? Gender.Woman :
+                        (radioBtn_Man.Checked) ? Gender.Man : Gender.None;
+                    var patient = new Patient(
+                        new Profile(firstName, lastName, nationalCode, gender),
+                        new UserAccount() { Password = password, UserName = userName }
+                    );
+                    _patientsManager.AddItem(patient);
                 }
-
-                if (string.IsNullOrEmpty(ctxt_password.Text) ||
-                    string.IsNullOrEmpty(ctxt_confirm_password.Text))
+                else
                 {
-                    throw new Exception("Please enter the password.");
+                    _patient.Profile.FirstName = firstName;
+                    _patient.Profile.LastName = lastName;
+                    if (ctxt_password.GetText().Length>0)
+                    {
+                        if (ctxt_pre_password.GetText() != _patient.UserAccount.Password)
+                        {
+                            throw new Exception("Enter your current password correctly.");
+                        }
+                        checkForPassword();
+                        _patient.UserAccount.Password = ctxt_password.GetText();
+                    }
+                    _patient.UserAccount.UserName = userName;
                 }
-                if (ctxt_password.Text.Equals(ctxt_confirm_password.Text))
-                {
-                    throw new Exception("confirm password doesn't match.");
-                }
-                var password = ctxt_password.Text;
-                var patient = new Patient(new Profile(firstName, lastName, nationalCode,
-                    (radioBtn_Woman.Checked) ? Gender.Woman : Gender.Man));
-                _patients.Add(patient);
-                //todo
                 Close();
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
-                throw;
+                MessageBox.Show(exception.Message, "Fill out the form", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        void checkForAddNewItem(string nationalCode, string userName)
+        {
+            if (_patientsManager.Items.Exists(a =>
+                a.Profile.NationalCode == nationalCode || a.UserAccount.UserName == userName))
+            {
+                throw new Exception("this account already exists.");
+            }
+        }
+        void checkForPassword()
+        {
+            if (string.IsNullOrEmpty(ctxt_password.GetText()) ||
+                string.IsNullOrEmpty(ctxt_confirm_password.GetText()))
+            {
+                throw new Exception("Please enter the password.");
+            }
+            if (ctxt_password.GetText() != ctxt_confirm_password.GetText())
+            {
+                throw new Exception("confirm password doesn't match.");
+            }
+        }
+
     }
 }

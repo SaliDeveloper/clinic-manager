@@ -14,13 +14,13 @@ namespace FinalProject.Views
         private readonly DataManager<IDoctor> _doctorsManager;
         private List<Appointment> _appointments;
 
-        public PatientForm(DataManager<Appointment> dataManager, Patient patient)
+        public PatientForm(DataManager<Appointment> appointmentsManager, Patient patient)
         {
             InitializeComponent();
-            _appointmentsManager = dataManager;
+            _appointmentsManager = appointmentsManager;
             _patient = patient;
             FillProfileTable();
-            _appointments = dataManager.Items.FindAll(a => a.PatientId == patient.Id);
+            _appointments = appointmentsManager.Items.FindAll(a => a.PatientId == patient.Id);
 
             _doctorsManager = new DataManager<IDoctor>("doctors.txt", new JsonSaveLoadDentists());
             FillAppointmentsTable(_appointments);
@@ -80,6 +80,8 @@ namespace FinalProject.Views
 
         private void btn_edit_profile_Click(object sender, EventArgs e)
         {
+            Form form = new SignUpForm(_patient);
+            form.ShowDialog();
         }
     }
 }

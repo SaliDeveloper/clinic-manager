@@ -1,4 +1,6 @@
 ﻿using FinalProject.Interfaces;
+using FinalProject.Main_Classes.Controllers;
+using Newtonsoft.Json;
 
 namespace FinalProject.Main_Classes
 {
@@ -7,27 +9,21 @@ namespace FinalProject.Main_Classes
         public Patient()
         {
             Profile = new Profile();
+            UserAccount = new UserAccount();
         }
 
         public Patient(IProfile profile, UserAccount account = null, Insurance insurance = null)
         {
             Profile = profile;
-            Account = account ?? new UserAccount();
+            UserAccount = account ?? new UserAccount();
             Insurance = insurance;
         }
 
         public long Id => long.Parse(Profile.NationalCode);
-        public UserAccount Account { get; }
+        public UserAccount UserAccount { get; }
+        [JsonConverter(typeof(JsonDataConverter<Profile>))]
         public IProfile Profile { get; set; }
         internal Insurance Insurance { get; set; }
-
-        //public static bool operator ==(Patient a, Patient b)
-        //{
-        //    return !(a is null) && !(b is null) && Equals(a.Id, b.Id);
-        //}
-        //public static bool operator !=(Patient a, Patient b) => !(a == b);
-
-        //public override bool Equals(object obj) => this == obj as Patient;
 
         public override string ToString()
         {
