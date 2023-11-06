@@ -14,3 +14,6 @@
 - Manage doctors and other staff (Admin):
 
 ![](https://github.com/momasal/clinic-manager/blob/momasal-patch-1/FinalProject/Resources/Picture4.png)
+
+
+* For more info about this project, head on over to [PowerPoint project report](https://github.com/SaliDeveloper/clinic-manager/raw/master/Report%20Project.pptx)
